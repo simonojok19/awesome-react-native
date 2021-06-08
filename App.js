@@ -26,10 +26,8 @@ const App = () => {
           <FlatList data={COLORS} renderItem={
               ({item, index}) => <ColorBox colorName={item.colorName} hexCode={item.hexCode}/>}
                     keyExtractor={item => item.colorName}
+                    ListHeaderComponent={<Text>Solarized Color</Text>}
           />
-        <View style={styles.container}>
-          <Text style={[styles.text]}>Here are some boxes of different colors</Text>
-        </View>
       </SafeAreaView>
   );
 }
