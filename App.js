@@ -6,8 +6,11 @@ const App = () => {
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.container}>
           <Text style={[styles.text]}>Here are some boxes of different colors</Text>
-          <View style={[styles.cyanBox]}>
+          <View style={[styles.box, styles.cyanBox]}>
               <Text style={[styles.boxText]}>Cyan: #2aa198</Text>
+          </View>
+          <View style={[styles.box, styles.blueBox]}>
+              <Text style={[styles.boxText]}>Blue: #268bd2</Text>
           </View>
         </View>
       </SafeAreaView>
@@ -24,11 +27,17 @@ const styles = StyleSheet.create({
       paddingHorizontal: 10,
       paddingTop: 40
   },
-  cyanBox: {
-      backgroundColor: "#2aa198",
+  box: {
       padding: 10,
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      marginBottom: 10
+  },
+  cyanBox: {
+      backgroundColor: "#2aa198",
+  },
+  blueBox: {
+      backgroundColor: "#268bd2"
   },
   boxText: {
       color: "white",
