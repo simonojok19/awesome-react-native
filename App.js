@@ -26,28 +26,6 @@ const styles = StyleSheet.create({
       paddingHorizontal: 10,
       paddingTop: 40
   },
-  box: {
-      padding: 10,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: 10
-  },
-  cyanBox: {
-      backgroundColor: "#2aa198",
-  },
-  blueBox: {
-      backgroundColor: "#268bd2"
-  },
-  magentaBox: {
-      backgroundColor: "#d33682"
-  },
-  orangeBox: {
-      backgroundColor: '#cb4b16'
-  },
-  boxText: {
-      color: "white",
-      fontWeight: "bold"
-  }
 });
 
 export default App
