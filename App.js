@@ -7,19 +7,10 @@ const App = () => {
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.container}>
           <Text style={[styles.text]}>Here are some boxes of different colors</Text>
-          <View style={[styles.box, styles.cyanBox]}>
-              <Text style={[styles.boxText]}>Cyan: #2aa198</Text>
-          </View>
-          <View style={[styles.box, styles.blueBox]}>
-              <Text style={[styles.boxText]}>Blue: #268bd2</Text>
-          </View>
-          <View style={[styles.box, styles.magentaBox]}>
-              <Text style={[styles.boxText]}>Magenta: #d33682</Text>
-          </View>
-          <View style={[styles.box, styles.orangeBox]}>
-              <Text style={[styles.boxText]}>Orange: #cb4b16</Text>
-          </View>
             <ColorBox colorName="Cyan" hexCode="#2aa198"/>
+            <ColorBox colorName="Blue" hexCode="#268bd2"/>
+            <ColorBox colorName="Magenta" hexCode="#d33682"/>
+            <ColorBox colorName="Orange" hexCode="#cb4b16"/>
         </View>
       </SafeAreaView>
   );
