@@ -22,13 +22,11 @@ const COLORS = [
 
 const ColorPalette = () => {
     return (
-        <SafeAreaView style={styles.safeArea}>
-            <FlatList data={COLORS} renderItem={
-                ({item, index}) => <ColorBox colorName={item.colorName} hexCode={item.hexCode}/>}
-                      keyExtractor={item => item.colorName}
-                      ListHeaderComponent={<Text>Solarized Color</Text>}
-            />
-        </SafeAreaView>
+        <FlatList data={COLORS} renderItem={
+            ({item, index}) => <ColorBox colorName={item.colorName} hexCode={item.hexCode}/>}
+                  keyExtractor={item => item.colorName}
+                  ListHeaderComponent={<Text>Solarized Color</Text>}
+        />
     )
 }
 
@@ -36,7 +34,8 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 40
+        marginBottom: 40,
+        backgroundColor: 'white'
     },
     container: {
         paddingHorizontal: 10,
