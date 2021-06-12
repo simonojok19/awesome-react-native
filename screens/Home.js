@@ -37,7 +37,7 @@ const Home = ({navigation}) => {
                 colorPalette={item}
             />
         )}
-            ListHeaderComponent={<TouchableOpacity>
+            ListHeaderComponent={<TouchableOpacity onPress={() => {navigation.navigate('ColorPaletteModal')}}>
                 <Text>Launch Modal</Text>
             </TouchableOpacity>}
         />

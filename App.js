@@ -3,6 +3,7 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 import ColorPalette from "./screens/ColorPalette";
 import Home from "./screens/Home";
+import ColorPaletteModal from "./screens/ColorPaletteModal";
 
 const RootStack = createStackNavigator()
 const MainStack = createStackNavigator()
@@ -25,7 +26,7 @@ const App = () => {
                                   component={MainStackScreen}
                                   options={{headerShown: false}}/>
                 <RootStack.Screen name="ColorPaletteModal"
-                                  component={ColorPalette}/>
+                                  component={ColorPaletteModal}/>
             </RootStack.Navigator>
         </NavigationContainer>
     );
