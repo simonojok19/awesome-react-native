@@ -24,6 +24,8 @@ const App = () => {
                 <RootStack.Screen name="Main"
                                   component={MainStackScreen}
                                   options={{headerShown: false}}/>
+                <RootStack.Screen name="ColorPaletteModal"
+                                  component={ColorPalette}/>
             </RootStack.Navigator>
         </NavigationContainer>
     );
