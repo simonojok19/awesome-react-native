@@ -8,7 +8,7 @@ const ColorPalette = ({route}) => {
         <FlatList data={colors} renderItem={
             ({item, index}) => <ColorBox key={index} colorName={item.colorName} hexCode={item.hexCode}/>}
                   keyExtractor={item => item.colorName}
-                  ListHeaderComponent={<Text>{paletteName}</Text>}
+                  ListHeaderComponent={<Text style={styles.box}>{paletteName}</Text>}
         />
     )
 }
@@ -24,6 +24,13 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingTop: 40
     },
+    box: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.3,
+        shadowRadius: 1,
+        elevation: 10,
+    }
 });
 
 export default ColorPalette

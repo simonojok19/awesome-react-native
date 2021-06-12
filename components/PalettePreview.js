@@ -1,15 +1,15 @@
 import React from "react";
-import {TouchableOpacity, Text, StyleSheet, FlatList} from "react-native";
+import {TouchableOpacity, Text, StyleSheet, FlatList, View} from "react-native";
 
 const PalettePreview = ({handlePress, colorPalette}) => {
     return (
         <TouchableOpacity onPress={handlePress}>
             <Text style={styles.text}>{colorPalette.paletteName}</Text>
             <FlatList
-                horizontal={true}
+                style={styles.list}
                 data={colorPalette.colors.slice(0, 5)}
                 keyExtractor={item => item.colorName}
-                renderItem={({item}) => <Text>{item.colorName}</Text>}
+                renderItem={({item}) => <View style={[{backgroundColor: item.hexCode}, styles.box]}/>}
             />
         </TouchableOpacity>
     )
@@ -19,6 +19,21 @@ export default PalettePreview;
 const styles = StyleSheet.create({
     text: {
         fontWeight: 'bold',
-        fontSize: 18
+        fontSize: 18,
+        marginBottom: 10
+    },
+    box: {
+        height: 30,
+        width: 30,
+        marginRight: 10,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.3,
+        shadowRadius: 1,
+        elevation: 10,
+    },
+    list: {
+        marginBottom: 20,
+        flexDirection: 'row'
     }
 })
