@@ -46,7 +46,7 @@ const Home = ({navigation}) => {
     return (
         <FlatList data={COLOR_PALETTES} keyExtractor={item => item.padding} renderItem={({item, index}) => (
             <TouchableOpacity key={index} onPress={() => {navigation.navigate("ColorPalette", {
-                paletteName: 'Solarized',
+                paletteName: item.paletteName,
                 colors: item.colors
             })}}>
                 <Text>{item.paletteName}</Text>
