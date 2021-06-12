@@ -10,24 +10,22 @@ const MainStack = createStackNavigator()
 const MainStackScreen = () => {
     return (
         <MainStack.Navigator>
-            <MainStack.Screen name="Home" component={Home}/>
-            <MainStack.Screen name="ColorPalette" component={ColorPalette}
-                              options={({route}) => ({
-                                  title: route.params.paletteName
-                              })}/>
+            <RootStack.Screen name="Home" component={Home}/>
+            <RootStack.Screen name="ColorPalette" component={ColorPalette} options={({route}) => ({
+                title: route.params.paletteName
+            })}/>
         </MainStack.Navigator>
     );
 }
 const App = () => {
-  return (
-      <NavigationContainer>
-          <RootStack.Navigator>
-              <RootStack.Screen name="Home" component={Home} />
-              <RootStack.Screen name="ColorPalette" component={ColorPalette} options={({route}) =>({
-                  title: route.params.paletteName
-              })}/>
-          </RootStack.Navigator>
-      </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <RootStack.Navigator mode="modal">
+                <RootStack.Screen name="Main"
+                                  component={MainStackScreen}
+                                  options={{headerShown: false}}/>
+            </RootStack.Navigator>
+        </NavigationContainer>
+    );
 }
 export default App
