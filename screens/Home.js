@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useCallback} from "react";
-import {FlatList, StyleSheet, RefreshControl} from "react-native";
+import React, {useCallback, useEffect, useState} from "react";
+import {FlatList, StyleSheet, Text, TouchableOpacity} from "react-native";
 import PalettePreview from "../components/PalettePreview";
 
 const Home = ({navigation}) => {
@@ -31,10 +31,16 @@ const Home = ({navigation}) => {
             style={styles.list}
             data={colors} keyExtractor={item => item.paletteName} renderItem={({item, index}) => (
             <PalettePreview
-                handlePress={() => {navigation.navigate('ColorPalette', item)}}
+                handlePress={() => {
+                    navigation.navigate('ColorPalette', item)
+                }}
                 colorPalette={item}
             />
-        )}/>
+        )}
+            ListHeaderComponent={<TouchableOpacity>
+                <Text>Launch Modal</Text>
+            </TouchableOpacity>}
+        />
     )
 }
 
