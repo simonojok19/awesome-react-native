@@ -1,11 +1,18 @@
 import React from "react";
-import {TouchableOpacity, Text} from "react-native";
+import {TouchableOpacity, Text, StyleSheet} from "react-native";
 
 const PalettePreview = ({handlePress, colorPalette}) => {
     return (
         <TouchableOpacity onPress={handlePress}>
-            <Text>{colorPalette.paletteName}</Text>
+            <Text style={styles.text}>{colorPalette.paletteName}</Text>
         </TouchableOpacity>
     )
 }
 export default PalettePreview;
+
+const styles = StyleSheet.create({
+    text: {
+        fontWeight: 'bold',
+        fontSize: 18
+    }
+})
