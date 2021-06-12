@@ -2,7 +2,10 @@ import React, {useCallback, useEffect, useState} from "react";
 import {FlatList, StyleSheet, Text, TouchableOpacity} from "react-native";
 import PalettePreview from "../components/PalettePreview";
 
-const Home = ({navigation}) => {
+const Home = ({navigation, route}) => {
+    const newColors = route.params ? route.params.palette : undefined;
+    console.log(newColors)
+
     const [colors, setColors] = useState([]);
     const [isRefreshing, setRefreshing] = useState(true);
 
@@ -15,6 +18,12 @@ const Home = ({navigation}) => {
             })
             .catch(error => console.log(error, "error"))
     }, []);
+
+    useEffect(() => {
+        if(newColors) {
+            setColors(palettes => [newColors, ...colors])
+        }
+    }, [newColors])
 
     const handleRefresh = useCallback(() => {
         setRefreshing(true)

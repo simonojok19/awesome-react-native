@@ -8,7 +8,12 @@ const ColorPaletteModal = ({navigation}) => {
         if (!name){
             Alert.alert("Please enter a palette name")
         } else {
-            navigation.navigate('Home')
+            navigation.navigate('Home', {
+                palette: {
+                    paletteName: name,
+                    colors: []
+                }
+            })
         }
     }, [name]);
     return (
