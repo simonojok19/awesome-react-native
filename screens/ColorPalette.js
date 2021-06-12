@@ -6,7 +6,7 @@ const ColorPalette = ({route}) => {
     const {colors, paletteName} = route.params
     return (
         <FlatList data={colors} renderItem={
-            ({item, index}) => <ColorBox colorName={item.colorName} hexCode={item.hexCode}/>}
+            ({item, index}) => <ColorBox key={index} colorName={item.colorName} hexCode={item.hexCode}/>}
                   keyExtractor={item => item.colorName}
                   ListHeaderComponent={<Text>{paletteName}</Text>}
         />
