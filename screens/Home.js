@@ -4,7 +4,6 @@ import PalettePreview from "../components/PalettePreview";
 
 const Home = ({navigation, route}) => {
     const newColors = route.params ? route.params.palette : undefined;
-    console.log(newColors)
 
     const [colors, setColors] = useState([]);
     const [isRefreshing, setRefreshing] = useState(true);
@@ -21,7 +20,7 @@ const Home = ({navigation, route}) => {
 
     useEffect(() => {
         if(newColors) {
-            setColors(palettes => [newColors, ...colors])
+            setColors(palettes => [newColors, ...palettes])
         }
     }, [newColors])
 
@@ -47,7 +46,7 @@ const Home = ({navigation, route}) => {
             />
         )}
             ListHeaderComponent={<TouchableOpacity onPress={() => {navigation.navigate('ColorPaletteModal')}}>
-                <Text>Launch Modal</Text>
+                <Text style={styles.buttonText}>Add a color scheme</Text>
             </TouchableOpacity>}
         />
     )
@@ -57,6 +56,12 @@ const styles = StyleSheet.create({
     list: {
         padding: 10,
         backgroundColor: 'white'
+    },
+    buttonText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'teal',
+        marginBottom: 10
     }
 })
 
