@@ -9,8 +9,8 @@ const PalettePreview = ({handlePress, colorPalette}) => {
                 horizontal={true}
                 data={colorPalette.colors.slice(0, 5)}
                 keyExtractor={item => item.colorName}
-                renderItem={({ item}) => <Text>{item.colorName}</Text>}
-                />
+                renderItem={({item}) => <Text>{item.colorName}</Text>}
+            />
         </TouchableOpacity>
     )
 }
